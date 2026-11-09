@@ -1,0 +1,30 @@
+{
+    "database": "student_feedback_installcheck_20261028_095753",
+    "mysql": "8.4.3",
+    "timezone": "+00:00",
+    "steps": [
+        {
+            "command": "migrate",
+            "exit_code": 0,
+            "output": "\n   INFO  Preparing database.  \n\r\n  Creating migration table ............................................................................. 367.76ms DONE\r\n\r\n   INFO  Running migrations.  \n\r\n  0001_01_01_000000_create_users_table ................................................................... 1 giây DONE\r\n  0001_01_01_000001_create_cache_table ................................................................. 990.18ms DONE\r\n  0001_01_01_000002_create_jobs_table .................................................................... 1 giây DONE\r\n  2026_10_17_000000_prepare_feedback_users ............................................................. 953.74ms DONE\r\n  2026_10_17_000001_create_feedback_domain_tables ....................................................... 43 giây DONE\r\n  2026_10_17_000002_remove_ticket_assignment_pair_unique ............................................... 440.74ms DONE\r\n  2026_10_28_000003_strengthen_feedback_constraints ...................................................... 7 giây DONE\r\n  2026_10_28_000004_add_submit_retry_version ........................................................... 319.73ms DONE\r\n  2026_10_28_000005_require_user_full_name ............................................................. 939.79ms DONE\r\n\r\n"
+        },
+        {
+            "command": "db:seed",
+            "exit_code": 0,
+            "output": "\n   INFO  Seeding database.  \n\r\n  Database\\Seeders\\FeedbackSeeder ............................................................................ RUNNING  \r\nĐã tạo 100 hồ sơ demo theo workflow. Chạy php artisan demo:verify.\r\n  Database\\Seeders\\FeedbackSeeder ..................................................................... 15,902 ms DONE  \r\n\r\n"
+        },
+        {
+            "command": "demo:verify",
+            "exit_code": 0,
+            "output": "{\n    \"anchor_utc\": \"2026-10-28T09:58:53+00:00\",\n    \"tables\": {\n        \"users\": 26,\n        \"roles\": 4,\n        \"user_roles\": 26,\n        \"departments\": 3,\n        \"department_members\": 4,\n        \"categories\": 6,\n        \"tickets\": 100,\n        \"ticket_messages\": 162,\n        \"attachments\": 3,\n        \"ticket_assignments\": 69,\n        \"ticket_status_history\": 453,\n        \"notifications\": 415,\n        \"ticket_ratings\": 12,\n        \"audit_logs\": 620\n    },\n    \"statuses\": {\n        \"ASSIGNED\": 12,\n        \"CANCELLED\": 7,\n        \"CLOSED\": 16,\n        \"DRAFT\": 8,\n        \"IN_PROGRESS\": 14,\n        \"REJECTED\": 7,\n        \"RESOLVED\": 12,\n        \"SUBMITTED\": 12,\n        \"WAITING_STUDENT\": 12\n    },\n    \"report_now\": {\n        \"total_submitted\": 92,\n        \"by_status\": {\n            \"ASSIGNED\": 12,\n            \"CANCELLED\": 7,\n            \"CLOSED\": 16,\n            \"IN_PROGRESS\": 14,\n            \"REJECTED\": 7,\n            \"RESOLVED\": 12,\n            \"SUBMITTED\": 12,\n            \"WAITING_STUDENT\": 12\n        },\n        \"by_type\": {\n            \"FEEDBACK\": 46,\n            \"PROPOSAL\": 46\n        },\n        \"by_category\": {\n            \"1\": 15,\n            \"2\": 15,\n            \"3\": 16,\n            \"4\": 16,\n            \"5\": 15,\n            \"6\": 15\n        },\n        \"by_department\": {\n            \"\": 26,\n            \"1\": 33,\n            \"2\": 19,\n            \"3\": 14\n        },\n        \"overdue_open\": 10,\n        \"rating\": {\n            \"average\": 3.75,\n            \"total\": 12\n        }\n    },\n    \"overdue_at_seed\": 10,\n    \"reopened\": 6,\n    \"transfers\": 3,\n    \"integrity_errors\": [],\n    \"rating_distribution\": {\n        \"1\": 1,\n        \"2\": 1,\n        \"3\": 2,\n        \"4\": 4,\n        \"5\": 4\n    }\n}\r\nDataset khớp số lượng\/trạng thái\/đánh giá và mốc quá hạn đã chốt.\r\n"
+        },
+        {
+            "command": "db:seed",
+            "exit_code": 0,
+            "output": "\n   INFO  Seeding database.  \n\r\n  Database\\Seeders\\FeedbackSeeder ............................................................................ RUNNING  \r\nDataset demo đã tồn tại: không sửa dữ liệu hoặc nhân đôi. Chạy demo:verify để đối chiếu.\r\n  Database\\Seeders\\FeedbackSeeder .......................................................................... 1 ms DONE  \r\n\r\n"
+        }
+    ],
+    "tickets": 100,
+    "rating_average": 3.75,
+    "verified_at_utc": "2026-10-28T09:59:09+00:00"
+}

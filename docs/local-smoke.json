@@ -1,0 +1,37 @@
+{
+  "url": "http://127.0.0.1:8000",
+  "verified_at_utc": "2026-10-28T09:56:48.130Z",
+  "roles": [
+    {
+      "role": "STUDENT",
+      "email": "student1@demo.local",
+      "total_submitted": 4,
+      "overdue_open": 0
+    },
+    {
+      "role": "COORDINATOR",
+      "email": "coordinator@demo.local",
+      "total_submitted": 92,
+      "overdue_open": 10
+    },
+    {
+      "role": "STAFF",
+      "email": "staff1@demo.local",
+      "total_submitted": 33,
+      "overdue_open": 0
+    },
+    {
+      "role": "ADMIN",
+      "email": "admin@demo.local",
+      "total_submitted": 0,
+      "overdue_open": 0,
+      "administration": {
+        "users": 26,
+        "departments": 3,
+        "members": 4,
+        "categories": 6,
+        "roles": 4
+      }
+    }
+  ]
+}

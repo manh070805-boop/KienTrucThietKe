@@ -1,0 +1,18 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-local-demo-only}
+      MYSQL_DATABASE: student_feedback
+    ports:
+      - "127.0.0.1:3308:3306"
+    volumes:
+      - feedback_mysql:/var/lib/mysql
+      - ./docker/init-test-db.sql:/docker-entrypoint-initdb.d/01-test.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+volumes:
+  feedback_mysql:

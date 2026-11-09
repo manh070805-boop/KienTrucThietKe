@@ -3,38 +3,32 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 use App\Models\User;
+use App\Services\IdentityService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class AuthController extends Controller
+final class AuthController extends Controller
 {
-    public function login(Request $request)
+    public function login(LoginRequest $r, IdentityService $identity)
     {
-        $data = $request->validate(['email' => ['required', 'email'], 'password' => ['required', 'string']]);
-        $user = User::where('email', $data['email'])->first();
-        if (!$user || !$user->is_active || !Auth::attempt(['email' => $data['email'], 'password' => $data['password'], 'is_active' => true])) {
-            return response()->json(['message' => 'Email hoặc mật khẩu không đúng.'], 401);
-        }
-        $request->session()->regenerate();
-        return response()->json(['data' => $this->userData($request->user())]);
+        return response()->json(['data' => $this->userData($identity->login($r, $r->validated()))]);
     }
 
-    public function logout(Request $request)
+    public function logout(Request $r, IdentityService $identity)
     {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        $identity->logout($r);
+
         return response()->json(['message' => 'Đã đăng xuất.']);
     }
 
-    public function me(Request $request)
+    public function me(Request $r)
     {
-        return response()->json(['data' => $this->userData($request->user())]);
+        return response()->json(['data' => $this->userData($r->user())]);
     }
 
     private function userData(User $user): array
     {
-        return ['id' => $user->id, 'full_name' => $user->displayName(), 'email' => $user->email, 'student_code' => $user->student_code, 'roles' => $user->roles()->pluck('code')];
+        return ['id' => $user->id, 'full_name' => $user->displayName(), 'email' => $user->email, 'student_code' => $user->student_code, 'roles' => $user->roles->pluck('code')];
     }
 }

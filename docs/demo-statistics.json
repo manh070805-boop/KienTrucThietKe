@@ -1,0 +1,77 @@
+{
+    "anchor_utc": "2026-10-28T08:25:57+00:00",
+    "tables": {
+        "users": 26,
+        "roles": 4,
+        "user_roles": 26,
+        "departments": 3,
+        "department_members": 4,
+        "categories": 6,
+        "tickets": 100,
+        "ticket_messages": 162,
+        "attachments": 3,
+        "ticket_assignments": 69,
+        "ticket_status_history": 453,
+        "notifications": 415,
+        "ticket_ratings": 12,
+        "audit_logs": 621
+    },
+    "statuses": {
+        "ASSIGNED": 12,
+        "CANCELLED": 7,
+        "CLOSED": 16,
+        "DRAFT": 8,
+        "IN_PROGRESS": 14,
+        "REJECTED": 7,
+        "RESOLVED": 12,
+        "SUBMITTED": 12,
+        "WAITING_STUDENT": 12
+    },
+    "report_now": {
+        "total_submitted": 92,
+        "by_status": {
+            "ASSIGNED": 12,
+            "CANCELLED": 7,
+            "CLOSED": 16,
+            "IN_PROGRESS": 14,
+            "REJECTED": 7,
+            "RESOLVED": 12,
+            "SUBMITTED": 12,
+            "WAITING_STUDENT": 12
+        },
+        "by_type": {
+            "FEEDBACK": 46,
+            "PROPOSAL": 46
+        },
+        "by_category": {
+            "1": 15,
+            "2": 15,
+            "3": 16,
+            "4": 16,
+            "5": 15,
+            "6": 15
+        },
+        "by_department": {
+            "": 26,
+            "1": 33,
+            "2": 19,
+            "3": 14
+        },
+        "overdue_open": 10,
+        "rating": {
+            "average": 3.75,
+            "total": 12
+        }
+    },
+    "overdue_at_seed": 10,
+    "reopened": 6,
+    "transfers": 3,
+    "integrity_errors": [],
+    "rating_distribution": {
+        "1": 1,
+        "2": 1,
+        "3": 2,
+        "4": 4,
+        "5": 4
+    }
+}

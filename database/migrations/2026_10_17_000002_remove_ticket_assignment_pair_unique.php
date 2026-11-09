@@ -8,11 +8,14 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('tickets', function (Blueprint $table) { $table->dropUnique('tickets_assignment_pair_unique'); });
+        // MySQL needs a replacement index before dropping an index used by the FK.
+        Schema::table('tickets', fn (Blueprint $table) => $table->index(['assigned_department_id', 'assigned_staff_id'], 'tickets_assignment_pair_index'));
+        Schema::table('tickets', fn (Blueprint $table) => $table->dropUnique('tickets_assignment_pair_unique'));
     }
 
     public function down(): void
     {
-        Schema::table('tickets', function (Blueprint $table) { $table->unique(['assigned_department_id', 'assigned_staff_id'], 'tickets_assignment_pair_unique'); });
+        // Adding uniqueness would destroy compatibility with valid multiple assignments.
+        throw new RuntimeException('Migration sửa lỗi không hỗ trợ rollback. Khôi phục bản sao lưu nếu cần.');
     }
 };

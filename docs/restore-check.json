@@ -1,0 +1,41 @@
+{
+    "source_database": "student_feedback",
+    "restore_database": "student_feedback_restore_final_20261028",
+    "verified_at_utc": "2026-10-28T10:02:15+00:00",
+    "tables": {
+        "users": 26,
+        "roles": 4,
+        "user_roles": 26,
+        "departments": 3,
+        "department_members": 4,
+        "categories": 6,
+        "tickets": 100,
+        "ticket_messages": 162,
+        "attachments": 3,
+        "ticket_assignments": 69,
+        "ticket_status_history": 453,
+        "notifications": 415,
+        "ticket_ratings": 12,
+        "audit_logs": 621
+    },
+    "files": [
+        {
+            "storage_key": "tickets\/1\/demo-minh-chung-nhap.pdf",
+            "size_bytes": 607,
+            "sha256": "a2232c72f23df4213bdb2b68207eeab671e0fc9c0b7e932a4e7363b7fd30cc5c"
+        },
+        {
+            "storage_key": "tickets\/47\/demo-loi-man-hinh.png",
+            "size_bytes": 727,
+            "sha256": "55dd2925289b5fe8fd791ed8b5f2a21b9cbf924e74b7cb3cfa4ba726d83e5dfe"
+        },
+        {
+            "storage_key": "tickets\/33\/demo-doi-soat-noi-bo.jpg",
+            "size_bytes": 2481,
+            "sha256": "6b34e9fa14e0d5fdd7b80e85bc155fc10a7e1a280a3c17d5fbd7ee42cec27fef"
+        }
+    ],
+    "foreign_key_checks": 1,
+    "rating_average": 3.75,
+    "timestamps_and_rows_match": true
+}

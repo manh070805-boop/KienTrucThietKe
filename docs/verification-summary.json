@@ -1,0 +1,34 @@
+{
+    "url":  "http://127.0.0.1:8000",
+    "vite_hot_file_present":  false,
+    "backend_failures":  0,
+    "verified_at_utc":  "2026-10-28T10:25:39.2180816Z",
+    "backend_tests":  32,
+    "browser_flaky":  0,
+    "backend_assertions":  344,
+    "sqlite_files":  [
+                         {
+                             "file":  "database.sqlite",
+                             "unchanged":  true
+                         },
+                         {
+                             "file":  "database.sqlite.bak",
+                             "unchanged":  true
+                         },
+                         {
+                             "file":  "demo.sqlite",
+                             "unchanged":  true
+                         },
+                         {
+                             "file":  "demo2.sqlite",
+                             "unchanged":  true
+                         },
+                         {
+                             "file":  "demo3.sqlite",
+                             "unchanged":  true
+                         }
+                     ],
+    "http_status":  200,
+    "browser_unexpected":  0,
+    "browser_expected":  4
+}

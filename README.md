@@ -47,3 +47,4 @@ Browser test chạy qua server 8001 trên database test riêng; xem SETUP. Khôn
 ## Quy trình đóng góp
 
 Giữ quy trình nhóm cũ: Issue → nhánh feat/fix/docs theo số Issue → triển khai và tự kiểm tra → review Pull Request → merge khi nhóm duyệt. Lần triển khai này không tự commit, push hoặc merge.
+# KienTrucThietKe
